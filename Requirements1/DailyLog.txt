@@ -1,19 +1,28 @@
-/home/scottify/C916/Requirements1/apache_access.log
-/home/scottify/C916/Requirements1/eventA.log
-/home/scottify/C916/Requirements1/eventB.log
-/home/scottify/C916/Requirements1/eventC.log
-/home/scottify/C916/Requirements1/eventD.log
-/home/scottify/C916/Requirements1/eventE.log
-/home/scottify/C916/Requirements1/-Date /home/scottify/C916/Requirements1/10.1clients.xlsx /home/scottify/C916/Requirements1/10.1clients.xlsx:Zone.Identifier /home/scottify/C916/Requirements1/8.1clients.xlsx /home/scottify/C916/Requirements1/8.1clients.xlsx:Zone.Identifier /home/scottify/C916/Requirements1/9.1clients.xlsx /home/scottify/C916/Requirements1/9.1clients.xlsx:Zone.Identifier /home/scottify/C916/Requirements1/apache_access.log /home/scottify/C916/Requirements1/Basic Vanilla Milkshake Recipe _ Bobby Flay _ Food Network.pdf /home/scottify/C916/Requirements1/DailyLog.txt /home/scottify/C916/Requirements1/eventA.log /home/scottify/C916/Requirements1/eventB.log /home/scottify/C916/Requirements1/eventC.log /home/scottify/C916/Requirements1/eventD.log /home/scottify/C916/Requirements1/eventE.log /home/scottify/C916/Requirements1/Get-Date /home/scottify/C916/Requirements1/JanuaryEventPic1.jpeg /home/scottify/C916/Requirements1/prompts.ps1 /home/scottify/C916/Requirements1/swedenCarnivalEvent.jpg *.log
-/home/scottify/C916/Requirements1/apache_access.log
-/home/scottify/C916/Requirements1/eventA.log
-/home/scottify/C916/Requirements1/eventB.log
-/home/scottify/C916/Requirements1/eventC.log
-/home/scottify/C916/Requirements1/eventD.log
-/home/scottify/C916/Requirements1/eventE.log
-/home/scottify/C916/Requirements1/apache_access.log
-/home/scottify/C916/Requirements1/eventA.log
-/home/scottify/C916/Requirements1/eventB.log
-/home/scottify/C916/Requirements1/eventC.log
-/home/scottify/C916/Requirements1/eventD.log
-/home/scottify/C916/Requirements1/eventE.log
+Log files for: 02/25/2021 11:39:23
+
+    Directory: /home/scottify/C916/Requirements1
+
+Mode        LastWriteTime  Length Name
+----        -------------  ------ ----
+----- 09/22/2017    10:47 2779843 apache_access.log
+----- 10/09/2017    14:53   16189 eventA.log
+----- 10/09/2017    14:54   15667 eventB.log
+----- 10/09/2017    14:54   15766 eventC.log
+----- 10/09/2017    14:55   16693 eventD.log
+----- 10/09/2017    14:55   16671 eventE.log
+
+
+Log files for: 02/25/2021 11:39:26
+
+    Directory: /home/scottify/C916/Requirements1
+
+Mode        LastWriteTime  Length Name
+----        -------------  ------ ----
+----- 09/22/2017    10:47 2779843 apache_access.log
+----- 10/09/2017    14:53   16189 eventA.log
+----- 10/09/2017    14:54   15667 eventB.log
+----- 10/09/2017    14:54   15766 eventC.log
+----- 10/09/2017    14:55   16693 eventD.log
+----- 10/09/2017    14:55   16671 eventE.log
+
+

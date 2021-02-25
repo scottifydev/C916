@@ -12,9 +12,12 @@ do {
     switch ($input) {
         
         # 1.   Using a regular expression, list files within the Requirements1 folder, with the .log file extension and redirect the results to a new file called “DailyLog.txt” within the same directory without overwriting existing data. Each time the user selects this prompt, the current date should precede the listing. (User presses key 1.)
-    
-        1 { Get-ChildItem *.log | Add-Content -Path .\DailyLog.txt}
-        2 {type .\DailyLog.txt}
+        1 {Add-Content -Path .\DailyLog.txt -Value "Log files for: $(Get-Date)`n`r$(Get-ChildItem *.log | Format-Table -AutoSize | Out-String)"}
+        # 2.  List the files inside the “Requirements1” folder in tabular format, sorted in ascending alphabetical order. Direct the output into a new file called “C916contents.txt” found in your “Requirements1” folder. (User presses key 2.)
+        2 {Set-Content -Path .\C916contents.txt -Value (Get-ChildItem .\* | Format-Table -AutoSize | Out-String)}
+        # 3. Use counters to list the current CPU % Processor Time and physical memory usage. Collect 4 samples with each sample being 5 seconds intervals. (User presses key 3.) 
+        3 {type .\C916contents.txt}
+        # 4{ }
         Default {"Nothing!"}
     }
 } 
@@ -24,9 +27,7 @@ until ($input -eq '5')
 
 
 
-# 2.  List the files inside the “Requirements1” folder in tabular format, sorted in ascending alphabetical order. Direct the output into a new file called “C916contents.txt” found in your “Requirements1” folder. (User presses key 2.)
 
-# 3. Use counters to list the current CPU % Processor Time and physical memory usage. Collect 4 samples with each sample being 5 seconds intervals. (User presses key 3.) 
 
 # 4.  List all the different running processes inside your system. Sort the output by processor time in seconds greatest to least, and display it in grid format. (User presses key 4.) 
 
