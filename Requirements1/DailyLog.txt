@@ -1,0 +1,19 @@
+/home/scottify/C916/Requirements1/apache_access.log
+/home/scottify/C916/Requirements1/eventA.log
+/home/scottify/C916/Requirements1/eventB.log
+/home/scottify/C916/Requirements1/eventC.log
+/home/scottify/C916/Requirements1/eventD.log
+/home/scottify/C916/Requirements1/eventE.log
+/home/scottify/C916/Requirements1/-Date /home/scottify/C916/Requirements1/10.1clients.xlsx /home/scottify/C916/Requirements1/10.1clients.xlsx:Zone.Identifier /home/scottify/C916/Requirements1/8.1clients.xlsx /home/scottify/C916/Requirements1/8.1clients.xlsx:Zone.Identifier /home/scottify/C916/Requirements1/9.1clients.xlsx /home/scottify/C916/Requirements1/9.1clients.xlsx:Zone.Identifier /home/scottify/C916/Requirements1/apache_access.log /home/scottify/C916/Requirements1/Basic Vanilla Milkshake Recipe _ Bobby Flay _ Food Network.pdf /home/scottify/C916/Requirements1/DailyLog.txt /home/scottify/C916/Requirements1/eventA.log /home/scottify/C916/Requirements1/eventB.log /home/scottify/C916/Requirements1/eventC.log /home/scottify/C916/Requirements1/eventD.log /home/scottify/C916/Requirements1/eventE.log /home/scottify/C916/Requirements1/Get-Date /home/scottify/C916/Requirements1/JanuaryEventPic1.jpeg /home/scottify/C916/Requirements1/prompts.ps1 /home/scottify/C916/Requirements1/swedenCarnivalEvent.jpg *.log
+/home/scottify/C916/Requirements1/apache_access.log
+/home/scottify/C916/Requirements1/eventA.log
+/home/scottify/C916/Requirements1/eventB.log
+/home/scottify/C916/Requirements1/eventC.log
+/home/scottify/C916/Requirements1/eventD.log
+/home/scottify/C916/Requirements1/eventE.log
+/home/scottify/C916/Requirements1/apache_access.log
+/home/scottify/C916/Requirements1/eventA.log
+/home/scottify/C916/Requirements1/eventB.log
+/home/scottify/C916/Requirements1/eventC.log
+/home/scottify/C916/Requirements1/eventD.log
+/home/scottify/C916/Requirements1/eventE.log

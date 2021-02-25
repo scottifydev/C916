@@ -1,24 +1,28 @@
 # Scott Lee - 001397458
-$input = Read-Host "Input"
-switch ($input) {
-    1 { "it's 1" }
-    2 {"it's 2"}
-    Default {"Nothing!"}
-}
-
-
 
 # A.  Create a PowerShell script named “prompts.ps1” within the “Requirements1” folder. For the first line, create a comment and include your first and last name along with your student ID.
 
- 
-
 # Note: The remainder of this task should be completed within the same script file, prompts.ps1.
-
- 
 
 # B.  Create a “switch” statement that continues to prompt a user by doing each of the following activities, until a user presses key 5:
 
-# 1.   Using a regular expression, list files within the Requirements1 folder, with the .log file extension and redirect the results to a new file called “DailyLog.txt” within the same directory without overwriting existing data. Each time the user selects this prompt, the current date should precede the listing. (User presses key 1.)
+do {
+    
+    $input = Read-Host -Prompt "Input"
+    switch ($input) {
+        
+        # 1.   Using a regular expression, list files within the Requirements1 folder, with the .log file extension and redirect the results to a new file called “DailyLog.txt” within the same directory without overwriting existing data. Each time the user selects this prompt, the current date should precede the listing. (User presses key 1.)
+    
+        1 { Get-ChildItem *.log | Add-Content -Path .\DailyLog.txt}
+        2 {type .\DailyLog.txt}
+        Default {"Nothing!"}
+    }
+} 
+
+until ($input -eq '5')
+
+
+
 
 # 2.  List the files inside the “Requirements1” folder in tabular format, sorted in ascending alphabetical order. Direct the output into a new file called “C916contents.txt” found in your “Requirements1” folder. (User presses key 2.)
 
