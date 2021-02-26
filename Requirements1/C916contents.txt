@@ -1,0 +1,27 @@
+
+
+    Directory: C:\Users\Administrator\C916\Requirements1
+
+
+Mode          LastWriteTime  Length Name                                                          
+----          -------------  ------ ----                                                          
+-a----  2/26/2021   4:35 PM   14941 10.1clients.xlsx                                              
+-a----  2/26/2021   4:35 PM   16935 8.1clients.xlsx                                               
+-a----  2/26/2021   4:35 PM   17156 9.1clients.xlsx                                               
+-a----  2/26/2021   4:35 PM 2789789 apache_access.log                                             
+-a----  2/26/2021   4:35 PM   61804 Basic Vanilla Milkshake Recipe _ Bobby Flay _ Food Network.pdf
+-a----  2/26/2021   4:47 PM    2172 C916contents.txt                                              
+-a----  2/26/2021   4:50 PM    2192 DailyLog.txt                                                  
+-a----  2/26/2021   4:35 PM   16189 eventA.log                                                    
+-a----  2/26/2021   4:35 PM   15667 eventB.log                                                    
+-a----  2/26/2021   4:35 PM   15766 eventC.log                                                    
+-a----  2/26/2021   4:35 PM   16693 eventD.log                                                    
+-a----  2/26/2021   4:35 PM   16671 eventE.log                                                    
+-a----  2/26/2021   4:35 PM 4150250 JanuaryEventPic1.jpeg                                         
+-a----  2/26/2021   4:35 PM    4393 prompts.ps1                                                   
+-a----  2/26/2021   4:35 PM   95010 swedenCarnivalEvent.jpg                                       
+-a----  2/26/2021   4:45 PM   22643 Task-B3.PNG                                                   
+-a----  2/26/2021   4:47 PM   57195 Task-B4.PNG                                                   
+
+
+
