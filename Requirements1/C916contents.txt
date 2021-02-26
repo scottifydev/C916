@@ -1,0 +1,27 @@
+
+    Directory: /home/scottify/C916/Requirements1
+
+Mode        LastWriteTime  Length Name
+----        -------------  ------ ----
+----- 02/24/2021    20:21     277 -Date
+----- 10/09/2017    15:24   14941 10.1clients.xlsx
+----- 10/09/2017    15:24      50 10.1clients.xlsx:Zone.Identifier
+----- 10/09/2017    15:22   16935 8.1clients.xlsx
+----- 10/09/2017    15:22      50 8.1clients.xlsx:Zone.Identifier
+----- 10/09/2017    15:23   17156 9.1clients.xlsx
+----- 10/09/2017    15:23      50 9.1clients.xlsx:Zone.Identifier
+----- 09/22/2017    10:47 2779843 apache_access.log
+----- 09/22/2017    10:54   61804 Basic Vanilla Milkshake Recipe _ Bobby Flay _ Food Network.pdf
+----- 02/26/2021    11:06    1196 C916contents.txt
+----- 02/26/2021    11:29    2547 DailyLog.txt
+----- 10/09/2017    14:53   16189 eventA.log
+----- 10/09/2017    14:54   15667 eventB.log
+----- 10/09/2017    14:54   15766 eventC.log
+----- 10/09/2017    14:55   16693 eventD.log
+----- 10/09/2017    14:55   16671 eventE.log
+----- 02/24/2021    20:19     554 Get-Date
+----- 09/22/2017    10:57 4150250 JanuaryEventPic1.jpeg
+----- 02/26/2021    11:29    4105 prompts.ps1
+----- 09/22/2017    10:58   95010 swedenCarnivalEvent.jpg
+
+
