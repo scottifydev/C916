@@ -77,3 +77,20 @@ Mode        LastWriteTime  Length Name
 ----- 10/09/2017    14:55   16671 eventE.log
 
 
+Log files for: 02/26/2021 11:33:57
+
+
+    Directory: \\wsl$\Ubuntu\home\scottify\C916\Requirements1
+
+
+Mode          LastWriteTime  Length Name             
+----          -------------  ------ ----             
+------  9/22/2017  10:47 AM 2779843 apache_access.log
+------  10/9/2017   2:53 PM   16189 eventA.log       
+------  10/9/2017   2:54 PM   15667 eventB.log       
+------  10/9/2017   2:54 PM   15766 eventC.log       
+------  10/9/2017   2:55 PM   16693 eventD.log       
+------  10/9/2017   2:55 PM   16671 eventE.log       
+
+
+

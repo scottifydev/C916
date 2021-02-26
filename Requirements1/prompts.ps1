@@ -12,7 +12,7 @@ try {
 
     # A function to rewrite the screen after user input. Takes Variable from the switch since it is outside of the scope of the switch input variable
     function Run-Task ($TaskNumber) {
-        Write-Host "Running Task $TaskNumber"
+        Write-Host "Running Task $TaskNumber ..."
         Start-Sleep -Seconds 1.5
         Clear-Host
         Write-Host "Task $TaskNumber Complete!`n`r"
@@ -55,6 +55,7 @@ try {
             # 4.  On user input of "4", the powershell grid view window is opened displaying all running processes sorted by CPU time in decending order. The script waits for the window to be closed before proceeding. Screen is cleared and user is reprompted for input.
             
             4 {
+                Write-Host "Close Process List to Continue." -ForegroundColor Yellow
                 Get-Process | Sort-Object CPU -desc | Out-GridView -Wait
                 Clear-Host
             }
@@ -80,6 +81,9 @@ try {
     until ($input -eq '5')
 
  }
+
+# Catch function for System Out of Memory Error notifies user of exception and that the script is exiting.
+
  catch [System.OutOfMemoryException] {
      Write-Host "`n`rAn System Out of Memory Error occurred.`n`r" -ForegroundColor red
      Write-Host "Exiting... `n`r"

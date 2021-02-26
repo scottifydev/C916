@@ -1,27 +1,30 @@
 
-    Directory: /home/scottify/C916/Requirements1
 
-Mode        LastWriteTime  Length Name
-----        -------------  ------ ----
------ 02/24/2021    20:21     277 -Date
------ 10/09/2017    15:24   14941 10.1clients.xlsx
------ 10/09/2017    15:24      50 10.1clients.xlsx:Zone.Identifier
------ 10/09/2017    15:22   16935 8.1clients.xlsx
------ 10/09/2017    15:22      50 8.1clients.xlsx:Zone.Identifier
------ 10/09/2017    15:23   17156 9.1clients.xlsx
------ 10/09/2017    15:23      50 9.1clients.xlsx:Zone.Identifier
------ 09/22/2017    10:47 2779843 apache_access.log
------ 09/22/2017    10:54   61804 Basic Vanilla Milkshake Recipe _ Bobby Flay _ Food Network.pdf
------ 02/26/2021    11:06    1196 C916contents.txt
------ 02/26/2021    11:29    2547 DailyLog.txt
------ 10/09/2017    14:53   16189 eventA.log
------ 10/09/2017    14:54   15667 eventB.log
------ 10/09/2017    14:54   15766 eventC.log
------ 10/09/2017    14:55   16693 eventD.log
------ 10/09/2017    14:55   16671 eventE.log
------ 02/24/2021    20:19     554 Get-Date
------ 09/22/2017    10:57 4150250 JanuaryEventPic1.jpeg
------ 02/26/2021    11:29    4105 prompts.ps1
------ 09/22/2017    10:58   95010 swedenCarnivalEvent.jpg
+    Directory: \\wsl$\Ubuntu\home\scottify\C916\Requirements1
+
+
+Mode          LastWriteTime  Length Name                                                          
+----          -------------  ------ ----                                                          
+------  2/24/2021   8:21 PM     277 -Date                                                         
+------  10/9/2017   3:24 PM   14941 10.1clients.xlsx                                              
+------  10/9/2017   3:24 PM      50 10.1clients.xlsx?Zone.Identifier                              
+------  10/9/2017   3:22 PM   16935 8.1clients.xlsx                                               
+------  10/9/2017   3:22 PM      50 8.1clients.xlsx?Zone.Identifier                               
+------  10/9/2017   3:23 PM   17156 9.1clients.xlsx                                               
+------  10/9/2017   3:23 PM      50 9.1clients.xlsx?Zone.Identifier                               
+------  9/22/2017  10:54 AM   61804 Basic Vanilla Milkshake Recipe _ Bobby Flay _ Food Network.pdf
+------  2/26/2021  11:29 AM    1196 C916contents.txt                                              
+------  2/26/2021  11:33 AM    3100 DailyLog.txt                                                  
+------  2/24/2021   8:19 PM     554 Get-Date                                                      
+------  9/22/2017  10:57 AM 4150250 JanuaryEventPic1.jpeg                                         
+------  9/22/2017  10:47 AM 2779843 apache_access.log                                             
+------  10/9/2017   2:53 PM   16189 eventA.log                                                    
+------  10/9/2017   2:54 PM   15667 eventB.log                                                    
+------  10/9/2017   2:54 PM   15766 eventC.log                                                    
+------  10/9/2017   2:55 PM   16693 eventD.log                                                    
+------  10/9/2017   2:55 PM   16671 eventE.log                                                    
+------  2/26/2021  11:30 AM    4105 prompts.ps1                                                   
+------  9/22/2017  10:58 AM   95010 swedenCarnivalEvent.jpg                                       
+
 
 
