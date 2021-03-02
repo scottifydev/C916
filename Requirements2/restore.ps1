@@ -3,9 +3,10 @@
 # B.  Write a single script within the “restore.ps1” file that performs all of the following functions without user interaction:
 
 function Remove-OU ($OUName) {
-    Remove-ADOrganizationalUnit -Identity ou=$OUName,DC=ucertify,DC=com 
+    $Identity =  "ou=",$OUName,",DC=ucertify,DC=com" -join ''
+    Remove-ADOrganizationalUnit -Identity $Identity -Recursive
 }
-function Create_OU {
+function Create-OU {
     New-ADOrganizationalUnit -Name finance -ProtectedFromAccidentalDeletion $false
     
     $NewAD = Import-Csv $PSScriptRoot\financePersonnel.csv
