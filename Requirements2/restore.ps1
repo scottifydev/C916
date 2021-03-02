@@ -32,20 +32,7 @@ switch ($option) {
         Remove-OU ($OUName)
     }
     3 {
-        #Get a server object which corresponds to the default instance  
-        cd \sql\localhost\  
-        $srv = get-item default  
-        Write-Host $srv
-        #Create a new database  
-        # $db = New-Object -TypeName Microsoft.SqlServer.Management.Smo.Database -argumentlist $srv, "Test_SMO_Database"  
-        # $db.Create()  
-          
-        # #Reference the database and display the date when it was created.   
-        # $db = $srv.Databases["Test_SMO_Database"]  
-        # $db.CreateDate  
-          
-        # #Drop the database  
-        # $db.Drop()  
+        Invoke-Sqlcmd -Query "SELECT GETDATE() AS TimeOfQuery" -ServerInstance "MyComputer\MainInstance"
 
     }
 }
