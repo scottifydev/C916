@@ -2,15 +2,6 @@
 
 # B.  Write a single script within the “restore.ps1” file that performs all of the following functions without user interaction:
 
-$option = Read-Host 'Select an option'
-switch ($option) {
-    1 { Create-OU }
-    2 { 
-        $OUName = Read-Host 'Enter an OU name to Remove'
-        Remove-OU ($OUName)
-    }
-    Default {}
-}
 function Remove-OU ($OUName) {
     Remove-ADOrganizationalUnit -Identity ou=$OUName,DC=ucertify,DC=com 
 }
@@ -31,6 +22,15 @@ function Create_OU {
         New-AdUser -Name $Name -GivenName $First -Surname $Last -PostalCode $Postal -OfficePhone $Office -MobilePhone $Mobile -Path $Path
         
     }
+}
+$option = Read-Host 'Select an option'
+switch ($option) {
+    1 { Create-OU }
+    2 { 
+        $OUName = Read-Host 'Enter an OU name to Remove'
+        Remove-OU ($OUName)
+    }
+    Default {}
 }
 
 
