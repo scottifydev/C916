@@ -2,23 +2,36 @@
 
 # B.  Write a single script within the “restore.ps1” file that performs all of the following functions without user interaction:
 
-New-ADOrganizationalUnit -Name finance -ProtectedFromAccidentalDeletion $false
-
-$NewAD = Import-Csv $PSScriptRoot\financePersonnel.csv
-$Path = "ou=finance,DC=ucertify,DC=com"
-
-foreach ($ADUser in $NewAD) {
-
-    $First = $ADUser.First_Name
-    $Last = $ADUser.Last_Name
-    $Name = $ADUser.First_Name, $ADUser.Last_Name -join ' ' 
-    $Postal = $ADUser.PostalCode
-    $Office = $ADUser.OfficePhone
-    $Mobile = $ADUser.MobilePhone
-
-    New-AdUser -Name $Name -GivenName $First -Surname $Last -PostalCode $Postal -OfficePhone $Office -MobilePhone $Mobile -Path $Path
+$option = Host-Write 'Select an option'
+# switch ($option) {
+#     1 { Create-OU }
+#     2 { 
+#         $OUName = Host-Read 'Enter an OU name to Remove'
+#         Remove-OU
+#     }
+#     Default {}
+# }
+# function Remove-OU ($OUName) {
+#     Remove-ADOrganizationalUnit -Name $OUName 
+# }
+# function Create_OU {
+#     New-ADOrganizationalUnit -Name finance -ProtectedFromAccidentalDeletion $false
     
-}
+#     $NewAD = Import-Csv $PSScriptRoot\financePersonnel.csv
+#     $Path = "ou=finance,DC=ucertify,DC=com"
+#     foreach ($ADUser in $NewAD) {
+    
+#         $First = $ADUser.First_Name
+#         $Last = $ADUser.Last_Name
+#         $Name = $ADUser.First_Name, $ADUser.Last_Name -join ' ' 
+#         $Postal = $ADUser.PostalCode
+#         $Office = $ADUser.OfficePhone
+#         $Mobile = $ADUser.MobilePhone
+    
+#         New-AdUser -Name $Name -GivenName $First -Surname $Last -PostalCode $Postal -OfficePhone $Office -MobilePhone $Mobile -Path $Path
+        
+#     }
+# }
 
 
 
