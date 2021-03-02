@@ -31,26 +31,27 @@ switch ($option) {
         $OUName = Read-Host 'Enter an OU name to Remove'
         Remove-OU ($OUName)
     }
-    Default {}
+    3 {
+        #Get a server object which corresponds to the default instance  
+        cd \sql\localhost\  
+        $srv = get-item default  
+        Write-Host $srv
+        #Create a new database  
+        # $db = New-Object -TypeName Microsoft.SqlServer.Management.Smo.Database -argumentlist $srv, "Test_SMO_Database"  
+        # $db.Create()  
+          
+        # #Reference the database and display the date when it was created.   
+        # $db = $srv.Databases["Test_SMO_Database"]  
+        # $db.CreateDate  
+          
+        # #Drop the database  
+        # $db.Drop()  
+
+    }
 }
 
 
 
-# 1.  Create an Active Directory organizational unit (OU) named “finance.”
-
-# 2.  Import the financePersonnel.csv file (found in the “Requirements2” directory) into your Active Directory domain and directly into the finance OU. Be sure to include the following properties:
-
-# •  First Name
-
-# •  Last Name
-
-# •  Display Name (First Name + Last Name, including a space between)
-
-# •  Postal Code
-
-# • Office Phone
-
-# • Mobile Phone
 
 
 # 3.  Create a new database on the UCERTIFY3 SQL server instance called “ClientDB.”
