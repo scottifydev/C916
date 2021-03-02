@@ -2,7 +2,7 @@
 
 # B.  Write a single script within the “restore.ps1” file that performs all of the following functions without user interaction:
 
-# New-ADOrganizationalUnit -Name finance -ProtectedFromAccidentalDeletion $false
+New-ADOrganizationalUnit -Name finance -ProtectedFromAccidentalDeletion $false
 
 $NewAD = Import-Csv $PSScriptRoot\financePersonnel.csv
 $Path = "ou=finance,DC=ucertify,DC=com"
@@ -16,22 +16,8 @@ foreach ($ADUser in $NewAD) {
     $Office = $ADUser.OfficePhone
     $Mobile = $ADUser.MobilePhone
 
-    # New-AdUser -Name $Name -GivenName $First -Surname $Last -PostalCode $Postal -OfficePhone $Office -MobilePhone $Mobile -Path $Path
+    New-AdUser -Name $Name -GivenName $First -Surname $Last -PostalCode $Postal -OfficePhone $Office -MobilePhone $Mobile -Path $Path
     
-    $String = @" 
-    $First
-    $Last
-    $Name
-    $Postal
-    $Office
-    $Mobile
-"@
-    Write-Host  $String
-    $Last
-    $Name
-    $Postal
-    $Office
-    $Mobile
 }
 
 
