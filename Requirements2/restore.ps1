@@ -1,16 +1,12 @@
- 
-
-# B.  Write a single script within the “restore.ps1” file that performs all of the following functions without user interaction:
-
 function Remove-OU ($OUName) {
-    $Identity =  "ou=",$OUName,",DC=ucertify,DC=com" -join ''
+    $Identity =  'ou=',$OUName,',DC=ucertify,DC=com' -join ''
     Remove-ADOrganizationalUnit -Identity $Identity -Recursive
 }
 function Create-OU {
     New-ADOrganizationalUnit -Name finance -ProtectedFromAccidentalDeletion $false
     
     $NewAD = Import-Csv $PSScriptRoot\financePersonnel.csv
-    $Path = "ou=finance,DC=ucertify,DC=com"
+    $Path = 'ou=finance,DC=ucertify,DC=com'
     foreach ($ADUser in $NewAD) {
     
         $First = $ADUser.First_Name
@@ -32,8 +28,23 @@ switch ($option) {
         Remove-OU ($OUName)
     }
     3 {
-        Invoke-Sqlcmd -Query "SELECT GETDATE() AS TimeOfQuery" -ServerInstance "MyComputer\MainInstance"
+        Import-Module –Name sqlps -DisableNameChecking
+        $ServerName = '.\UCERTIFY3'
+        $Srv = New-Object Microsoft.SqlServer.Managment.Smo.Server -ArgumentList $ServerName
+        $Database = 'ClientDB'
+        $DB = New-Object Microsoft.SqlServer.Management.Smo.Database -ArgumentList $ServerName,$Database
+        $DB.Create()
 
+        Invoke-Sqlcmd -ServerInstance $ServerName -Database $Database -InputFile $PSScriptRoot\schema.sql
+
+        $Table = 'dbo.Client_A_Contacts'
+
+        Import-Csv $PSScriptRoot\NewClientData.csv | ForEach-Object { `
+            Invoke-Sqlcmd -ServerInstance $ServerName -Database $Database -Query `
+            "INSERT INTO $Table (first_name, last_name,city, county,zip, officePhone, mobilePhone) `
+            VALUES ($($_.first_name)','($($_.last_name)','($($_.city)','($($_.county)','($($_.zip)','($($_.officePhone)','($($_.mobilePhone)`
+            )"`
+        }
     }
 }
 
