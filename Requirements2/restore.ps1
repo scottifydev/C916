@@ -28,9 +28,9 @@ switch ($option) {
         Remove-OU ($OUName)
     }
     3 {
-        Import-Module –Name sqlps -DisableNameChecking
+        Import-Module -Name sqlps -DisableNameChecking
         $ServerName = '.\UCERTIFY3'
-        $Srv = New-Object Microsoft.SqlServer.Managment.Smo.Server -ArgumentList $ServerName
+        $Srv = New-Object Microsoft.SqlServer.Management.Smo.Server -ArgumentList $ServerName
         $Database = 'ClientDB'
         $DB = New-Object Microsoft.SqlServer.Management.Smo.Database -ArgumentList $Srv,$Database
         $DB.Create()
@@ -42,7 +42,7 @@ switch ($option) {
         Import-Csv $PSScriptRoot\NewClientData.csv | ForEach-Object { `
             Invoke-Sqlcmd -ServerInstance $ServerName -Database $Database -Query `
             "INSERT INTO $Table (first_name, last_name,city, county,zip, officePhone, mobilePhone) `
-            VALUES ($($_.first_name)','($($_.last_name)','($($_.city)','($($_.county)','($($_.zip)','($($_.officePhone)','($($_.mobilePhone)`
+            VALUES ('$($_.first_name)','($($_.last_name)','($($_.city)','($($_.county)','($($_.zip)','($($_.officePhone)','($($_.mobilePhone')`
             )"`
         }
     }
