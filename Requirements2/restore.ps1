@@ -7,12 +7,12 @@ function Create-OU {
     
         $First = $ADUser.First_Name
         $Last = $ADUser.Last_Name
-        $Name = $ADUser.First_Name, $ADUser.Last_Name -join ' ' 
+        $Name = $First, $Last -join ' ' 
         $Postal = $ADUser.PostalCode
         $Office = $ADUser.OfficePhone
         $Mobile = $ADUser.MobilePhone
     
-        New-AdUser -Name $Name -GivenName $First -Surname $Last -PostalCode $Postal -OfficePhone $Office -MobilePhone $Mobile -Path $Path
+        New-AdUser -GivenName $First -Surname $Last -Name $Name -PostalCode $Postal -OfficePhone $Office -MobilePhone $Mobile -Path $Path
         
     }
 }
@@ -43,13 +43,21 @@ function Write-SqlResults {
     Invoke-Sqlcmd -Database ClientDB -ServerInstance .\UCERTIFY3 -Query 'SELECT * FROM dbo.Client_A_Contacts' > .\SqlResults.txt
 }
 
-Clear-Host
-Write-Host 'Restoring Finance Organizational Unit...'
-Create-OU
-Write-Host 'Restoring Client Database...'
-Create-Database
-Set-Location $PSScriptRoot
-Write-Host 'Writing file AdResults.txt...'
-Write-ADResults
-Write-Host 'Writing file SqlResults.txt...'
-Write-SqlResults
+
+
+try {
+    Clear-Host
+    Write-Host 'Restoring Finance Organizational Unit...'
+    Create-OU
+    Write-Host 'Restoring Client Database...'
+    Create-Database
+    Set-Location $PSScriptRoot
+    Write-Host 'Writing file AdResults.txt...'
+    Write-ADResults
+    Write-Host 'Writing file SqlResults.txt...'
+    Write-SqlResults
+ }
+ catch [System.OutOfMemoryException] {
+     "System encountered an Out of Memory Exception"
+ }
+ 
