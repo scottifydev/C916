@@ -48,6 +48,7 @@ Write-Host 'Restoring Finance Organizational Unit...'
 Create-OU
 Write-Host 'Restoring Client Database...'
 Create-Database
+Set-Location $PSScriptRoot
 Write-Host 'Writing file AdResults.txt...'
 Write-ADResults
 Write-Host 'Writing file SqlResults.txt...'
