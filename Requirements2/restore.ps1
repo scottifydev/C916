@@ -1,7 +1,3 @@
-function Remove-OU ($OUName) {
-    $Identity =  'ou=',$OUName,',DC=ucertify,DC=com' -join ''
-    Remove-ADOrganizationalUnit -Identity $Identity -Recursive
-}
 function Create-OU {
     New-ADOrganizationalUnit -Name finance -ProtectedFromAccidentalDeletion $false
     
@@ -20,65 +16,38 @@ function Create-OU {
         
     }
 }
-$option = Read-Host 'Select an option'
-switch ($option) {
-    1 { Create-OU }
-    2 { 
-        $OUName = Read-Host 'Enter an OU name to Remove'
-        Remove-OU ($OUName)
-    }
-    3 {
-        Import-Module -Name sqlps -DisableNameChecking
-        $ServerName = '.\UCERTIFY3'
-        $Srv = New-Object Microsoft.SqlServer.Management.Smo.Server -ArgumentList $ServerName
-        $Database = 'ClientDB'
-        $DB = New-Object Microsoft.SqlServer.Management.Smo.Database -ArgumentList $Srv,$Database
-        $DB.Create()
-
-        Invoke-Sqlcmd -ServerInstance $ServerName -Database $Database -InputFile $PSScriptRoot\schema.sql
-
-        $Table = 'dbo.Client_A_Contacts'
-
-        Import-Csv $PSScriptRoot\NewClientData.csv | ForEach-Object { `
-            Invoke-Sqlcmd -ServerInstance $ServerName -Database $Database -Query `
-            "INSERT INTO $Table (first_name, last_name,city, county,zip, officePhone, mobilePhone) `
-            VALUES ('$($_.first_name)','$($_.last_name)','$($_.city)','$($_.county)','$($_.zip)','$($_.officePhone)','$($_.mobilePhone)'`
-            )"`
-        }
-    }
-    4 {
-        Get-ADUser -Filter * -SearchBase 'ou=finance,dc=ucertify,dc=com' -Properties DisplayName,PostalCode,OfficePhone,MobilePhone > .\AdResults.txt
-    }
-    5 {
-        Invoke-Sqlcmd -Database ClientDB -ServerInstance .\UCERTIFY3 -Query 'SELECT * FROM dbo.Client_A_Contacts' > .\SqlResults.txt
-
-    }
+function Create-Database {
+    Import-Module -Name sqlps -DisableNameChecking
+    $ServerName = '.\UCERTIFY3'
+    $Srv = New-Object Microsoft.SqlServer.Management.Smo.Server -ArgumentList $ServerName
+    $Database = 'ClientDB'
+    $DB = New-Object Microsoft.SqlServer.Management.Smo.Database -ArgumentList $Srv,$Database
+    $DB.Create()
+    
+    Invoke-Sqlcmd -ServerInstance $ServerName -Database $Database -InputFile $PSScriptRoot\schema.sql
+    
+    $Table = 'dbo.Client_A_Contacts'
+    
+    Import-Csv $PSScriptRoot\NewClientData.csv | ForEach-Object { `
+        Invoke-Sqlcmd -ServerInstance $ServerName -Database $Database -Query `
+        "INSERT INTO $Table (first_name, last_name,city, county,zip, officePhone, mobilePhone) `
+        VALUES ('$($_.first_name)','$($_.last_name)','$($_.city)','$($_.county)','$($_.zip)','$($_.officePhone)','$($_.mobilePhone)'`
+        )"`
 }
 
+function Write-ADResults {
+    Get-ADUser -Filter * -SearchBase 'ou=finance,dc=ucertify,dc=com' -Properties DisplayName,PostalCode,OfficePhone,MobilePhone > .\AdResults.txt
+}
+function Write-SqlResults {    
+    Invoke-Sqlcmd -Database ClientDB -ServerInstance .\UCERTIFY3 -Query 'SELECT * FROM dbo.Client_A_Contacts' > .\SqlResults.txt
+}
 
-
-
-
-# 3.  Create a new database on the UCERTIFY3 SQL server instance called “ClientDB.”
-
-# 4.  Create a new table and name it “Client_A_Contacts.” Add this table to your new database.
-
-# 5.  Insert the data from the attached “NewClientData.csv” file (found in the “Requirements2” folder) into the table created in part B4.
- 
-
-# C.  Apply exception handling using try-catch for System.OutOfMemoryException.
- 
-
-# D.    Run the script within the uCertify environment. After the script executes successfully, run the following cmdlets individually from within your Requirements2 directory:
-# 1. Get-ADUser -Filter * -SearchBase “ou=finance,dc=ucertify,dc=com” -Properties DisplayName,PostalCode,OfficePhone,MobilePhone > .\AdResults.txt
-# 2. Invoke-Sqlcmd -Database ClientDB –ServerInstance .\UCERTIFY3 -Query ‘SELECT * FROM dbo.Client_A_Contacts’ > .\SqlResults.txt
-
-
-
-# Note: Ensure you have all of the following files intact within the “Requirements2” folder, including the original files:
-
-# •  “restore.ps1”
-
-# •  “AdResults.txt”
-
-# •  “SqlResults.txt”
+Clear-Host
+Write-Host 'Restoring Finance Organizational Unit...'
+Create-OU
+Write-Host 'Restoring Client Database...'
+Create-Database
+Write-Host 'Writing file AdResults.txt...'
+Write-ADResults
+Write-Host 'Writing file SqlResults.txt...'
+Write-SqlResults
