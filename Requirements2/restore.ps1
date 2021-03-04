@@ -32,7 +32,7 @@ switch ($option) {
         $ServerName = '.\UCERTIFY3'
         $Srv = New-Object Microsoft.SqlServer.Managment.Smo.Server -ArgumentList $ServerName
         $Database = 'ClientDB'
-        $DB = New-Object Microsoft.SqlServer.Management.Smo.Database -ArgumentList $ServerName,$Database
+        $DB = New-Object Microsoft.SqlServer.Management.Smo.Database -ArgumentList $Srv,$Database
         $DB.Create()
 
         Invoke-Sqlcmd -ServerInstance $ServerName -Database $Database -InputFile $PSScriptRoot\schema.sql
