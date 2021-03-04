@@ -42,15 +42,15 @@ switch ($option) {
         Import-Csv $PSScriptRoot\NewClientData.csv | ForEach-Object { `
             Invoke-Sqlcmd -ServerInstance $ServerName -Database $Database -Query `
             "INSERT INTO $Table (first_name, last_name,city, county,zip, officePhone, mobilePhone) `
-            VALUES ('$($_.first_name)','($($_.last_name)','($($_.city)','($($_.county)','($($_.zip)','($($_.officePhone)','($($_.mobilePhone)'`
+            VALUES ('$($_.first_name)','$($_.last_name)','$($_.city)','$($_.county)','$($_.zip)','$($_.officePhone)','$($_.mobilePhone)'`
             )"`
         }
     }
     4 {
-        Get-ADUser -Filter * -SearchBase “ou=finance,dc=ucertify,dc=com” -Properties DisplayName,PostalCode,OfficePhone MobilePhone > .\AdResults.txt
+        Get-ADUser -Filter * -SearchBase 'ou=finance,dc=ucertify,dc=com' -Properties DisplayName,PostalCode,OfficePhone MobilePhone > .\AdResults.txt
     }
     5 {
-        Invoke-Sqlcmd -Database ClientDB –ServerInstance .\UCERTIFY3 -Query ‘SELECT * FROM dbo.Client_A_Contacts’ > .\SqlResults.txt
+        Invoke-Sqlcmd -Database ClientDB -ServerInstance .\UCERTIFY3 -Query 'SELECT * FROM dbo.Client_A_Contacts' > .\SqlResults.txt
 
     }
 }
