@@ -33,6 +33,7 @@ function Create-Database {
         "INSERT INTO $Table (first_name, last_name,city, county,zip, officePhone, mobilePhone) `
         VALUES ('$($_.first_name)','$($_.last_name)','$($_.city)','$($_.county)','$($_.zip)','$($_.officePhone)','$($_.mobilePhone)'`
         )"`
+    }
 }
 
 function Write-ADResults {
