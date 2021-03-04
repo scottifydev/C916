@@ -12,7 +12,7 @@ function Create-OU {
         $Office = $ADUser.OfficePhone
         $Mobile = $ADUser.MobilePhone
     
-        New-AdUser -GivenName $First -Surname $Last -Name $Name -PostalCode $Postal -OfficePhone $Office -MobilePhone $Mobile -Path $Path
+        New-AdUser -GivenName $First -Surname $Last -Name $Name -DisplayName $Name -PostalCode $Postal -OfficePhone $Office -MobilePhone $Mobile -Path $Path
         
     }
 }
