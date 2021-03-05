@@ -1,3 +1,4 @@
+# Scott Lee - 001397458
 function Create-OU {
     New-ADOrganizationalUnit -Name finance -ProtectedFromAccidentalDeletion $false
     
